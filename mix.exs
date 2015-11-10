@@ -27,6 +27,8 @@ defmodule Issues.Mixfile do
   #
   # Type "mix help deps" for more examples and options
   defp deps do
-    []
+    [
+      {:httpotion, github: "myfreeweb/httpotion"}
+    ]
   end
 end
