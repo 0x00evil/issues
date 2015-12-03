@@ -14,7 +14,7 @@ defmodule Issues.Mixfile do
   #
   # Type "mix help compile.app" for more information
   def application do
-    [applications: [:logger]]
+    [applications: [:httpotion]]
   end
 
   # Dependencies can be Hex packages:
@@ -28,7 +28,8 @@ defmodule Issues.Mixfile do
   # Type "mix help deps" for more examples and options
   defp deps do
     [
-      {:httpotion, github: "myfreeweb/httpotion"}
+      {:httpotion, github: "myfreeweb/httpotion"},
+      {:jsonex, "2.0.1", github: "marcelog/jsonex"}
     ]
   end
 end
