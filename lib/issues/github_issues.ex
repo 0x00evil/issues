@@ -9,9 +9,12 @@ defmodule Issues.GithubIssues do
 
     case HTTPotion.get(issues_url(user, project), [headers: @user_agent]) do
       %Response{body: body, status_code: status, headers: _headers} when status in 200..299 ->
-      {:ok, body}
-      %Response{body: body, status_code: status, headers: _headers}  ->
-      {:error, body}
+         {:ok, body}
+        # Jsonex.decode(body) |> length |> IO.puts
+        # IO.puts body
+
+      %Response{body: body, status_code: _status, headers: _headers}  ->
+        {:error, body}
     end
   end
 
